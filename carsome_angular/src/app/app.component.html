@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="inputbox">
+          <label>Select Date</label>
+          <input type="text" (click)="d.toggle()" (dateSelect)="onDateSelect($event)"
+            [startDate]="{year: minDate.year, month: minDate.month, day:minDate.day}" [minDate]="minDate" ngbDatepicker
+            #d="ngbDatepicker" placeholder="Select Date" [value]="datetots" />
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <app-alert [name]="alert"></app-alert>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 btn-primary btn">
+      Selected Date: {{datetots}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div *ngIf="selctedDaySlot" class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic">
+        <label ngbButtonLabel class="btn-primary" *ngFor="let slot of selctedDaySlot.slots">
+          <input ngbButton type="radio" [disabled]="slot.status == 1" (click)="reserveSlot(slot, selctedDaySlot.date)">
+          {{slot.time}}
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+</div>

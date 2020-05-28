@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+    be:
+        # image: node
+        build: ./carsome_node
+        # dockerfile: ./carsome_node/Dockerfile
+        container_name: node
+        # entrypoint: node
+        # command: index.js
+        ports: 
+            - 3000:3000
+    fe:
+        # image: node
+        build: ./carsome_angular
+        container_name: angular
+        ports: 
+            - 4200:80
+        # depends_on: 
+        #     - be
+# networks: 
+#     external: 
+#         name: bridge

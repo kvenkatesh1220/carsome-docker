@@ -1,0 +1,20 @@
+.btn-group {
+   display: inline-block!important;
+}
+.btn {
+    margin: 16px;
+}
+
+.btn:first-child {
+    margin-left: 0px !important;
+}
+.btn-primary {
+    color: #007bff!important;
+    background-color: #fff!important;
+    border: 1px solid #007bff!important;
+}
+
+.inputbox {
+    display: flex;
+    flex-direction: column;
+}
